@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xsections · Serious road engineering, in the coziest little world</title>
+<meta name="description" content="A cozy road engineering game powered by a real traffic simulation engine. Redesign everyday junctions and watch the jam melt away. Try the engine live in your browser.">
+<meta name="theme-color" content="#070b1e">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://xsections.co/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Xsections">
+<meta property="og:title" content="Xsections">
+<meta property="og:description" content="Serious road engineering, in the coziest little world. Try the real traffic engine live in your browser.">
+<meta property="og:url" content="https://xsections.co/">
+<meta property="og:image" content="https://xsections.co/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Xsections logo over a two-lane roundabout at night">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@xsectionsgame">
+<link rel="preload" href="fonts/lexend-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "Xsections", "url": "https://xsections.co/", "image": "https://xsections.co/img/og-image.jpg", "description": "A cozy road engineering game powered by a real traffic simulation engine. Redesign everyday junctions and watch the jam melt away. Try the engine live in your browser.", "genre": ["Simulation", "Puzzle", "Strategy"], "gamePlatform": "PC", "operatingSystem": "Windows", "inLanguage": ["en", "fr"], "author": {"@type": "Organization", "name": "Ivoria Int."}, "publisher": {"@type": "Organization", "name": "Ivoria Int."}, "sameAs": ["https://www.youtube.com/@xsections", "https://www.tiktok.com/@xsections", "https://www.instagram.com/xsectionsgame/", "https://x.com/xsectionsgame", "https://discord.gg/GJtPFErEtj"]}</script>
+<script src="config.js"></script>
+<script src="assets/i18n.js" defer></script>
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="b-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+<symbol id="b-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+<symbol id="b-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+<symbol id="b-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol>
+<symbol id="b-discord" viewBox="0 0 24 24"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+<symbol id="b-steam" viewBox="0 0 24 24"><path fill="currentColor" d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8.5" cy="8.5" r="1.4" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.4" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="i-scope" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.2"/><path d="M12 1.8v3.6M12 18.6v3.6M1.8 12h3.6M18.6 12h3.6"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.2v13.6L18.8 12z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.2" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="13.8" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 19.5h17M5 15.5l4.2-5 3.6 3 6.2-7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4.5 19.5l1-4.6L15.6 4.8a2.1 2.1 0 0 1 3 3L8.5 17.9zM13.6 6.8l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 19.8s-7.6-4.6-7.6-10.1A4.3 4.3 0 0 1 12 7.1a4.3 4.3 0 0 1 7.6 2.6c0 5.5-7.6 10.1-7.6 10.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-light" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7.6" y="2.6" width="8.8" height="18.8" rx="3.2"/><circle cx="12" cy="7.2" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="16.8" r="1.6"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.6 14.6A8 8 0 1 1 9.4 4.4a6.4 6.4 0 0 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5.5 21V3.8M5.5 4h11.5l-2.4 4.2L17 12.4H5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M8 16L16.5 7.5M9.5 7.5h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="sky" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="blob b4"></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav-wrap">
+  <nav class="nav glass" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+    <a class="brand" href="#top" aria-label="Xsections, back to the top" data-i18n-attr="aria-label:nav.home"><img src="img/brand/x-night-128.png" alt="" width="34" height="34"><span>Xsections</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#fix" data-i18n="nav.fix">Before / after</a>
+      <a href="#engine" data-i18n="nav.engine">Engine</a>
+      <a href="#bench" data-i18n="nav.bench">Test bench</a>
+      <a href="#game" data-i18n="nav.game">The game</a>
+      <a href="#community" data-i18n="nav.community">Community</a>
+    </div>
+    <div class="nav-end">
+      <div class="seg lang" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.lang">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false" lang="fr">FR</button>
+      </div>
+      <a class="btn primary sm" data-steam href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#b-steam"/></svg><span data-i18n="nav.wishlist">Wishlist</span></a>
+      <a class="btn primary sm" data-nosteam href="https://discord.gg/GJtPFErEtj" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#b-discord"/></svg><span>Discord</span></a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ hero: the live engine ============ -->
+  <section class="hero" id="hero" aria-labelledby="t-hero">
+    <div class="hero-copy">
+      <p class="live-chip glass"><i aria-hidden="true"></i><span data-i18n="hero.chip">Live: the real game engine, running in your browser</span></p>
+      <p class="logo"><img src="img/brand/logotype-night.webp" width="1200" height="481" alt="Xsections"></p>
+      <h1 id="t-hero" data-i18n="hero.thesis">Serious road engineering, in the <em>coziest little world</em>.</h1>
+      <p class="lead" data-i18n="hero.lead">Xsections is a cozy road engineering game. Redesign the junctions of everyday life (lanes, traffic lights, roundabouts) and watch a real traffic simulation tell you if it flows. No game over. Just traffic jams melting away.</p>
+      <div class="cta-row">
+        <a class="btn primary" data-steam href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#b-steam"/></svg><span data-i18n="cta.wishlist">Wishlist on Steam</span></a>
+        <a class="btn primary" data-nosteam href="https://discord.gg/GJtPFErEtj" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#b-discord"/></svg><span data-i18n="cta.discord">Join the Discord</span></a>
+        <a class="btn glass" href="#bench"><span data-i18n="cta.test">Test the engine</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <p class="platform"><span data-i18n="hero.platform">Coming to PC on Steam</span><span class="dot" aria-hidden="true"></span><span data-i18n="hero.studio">by Ivoria Int.</span></p>
+    </div>
+
+    <div class="hero-stage" id="hero-stage">
+      <canvas id="hero-sim" aria-label="A roundabout simulated live by the Xsections engine" data-i18n-attr="aria-label:hero.canvas"></canvas>
+      <aside class="hero-hud glass" aria-label="Live figures of this roundabout" data-i18n-attr="aria-label:hud.label">
+        <header>
+          <b data-i18n="hud.title">This roundabout is live</b>
+          <span data-i18n="hud.sub">Computed right now by the Xsections engine</span>
+        </header>
+        <div class="hud-body">
+          <div class="grade" id="hh-grade" data-level="">–</div>
+          <dl class="figs">
+            <div><dt data-i18n="u.vpm">veh/min</dt><dd id="hh-flow">–</dd></div>
+            <div><dt data-i18n="u.delay">mean delay</dt><dd><span id="hh-delay">–</span> s</dd></div>
+            <div><dt data-i18n="u.hes">hesitations</dt><dd id="hh-hes">0</dd></div>
+          </dl>
+        </div>
+        <div class="seg speed" role="group" aria-label="Simulation speed" data-i18n-attr="aria-label:u.speed">
+          <button type="button" data-hspeed="1" aria-pressed="true">x1</button>
+          <button type="button" data-hspeed="4" aria-pressed="false">x4</button>
+          <button type="button" data-hspeed="10" aria-pressed="false">x10</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <!-- ============ before / after ============ -->
+  <section class="block" id="fix" aria-labelledby="t-fix">
+    <header class="head">
+      <div class="lane-mark" aria-hidden="true"></div>
+      <p class="eyebrow" data-i18n="fix.eyebrow">Before / after</p>
+      <h2 id="t-fix" data-i18n="fix.title">This junction is a disaster. Fix it.</h2>
+      <p data-i18n="fix.lead">Two copies of the same junction, fed the same cars at the same moments. On the left, no signs: priority to the right. On the right, your fix. The engine does the rest, and grades both.</p>
+    </header>
+
+    <div class="duel" id="duel">
+      <article class="duel-side glass" aria-label="Before" data-i18n-attr="aria-label:fix.before">
+        <header class="duel-head">
+          <span class="tag before" data-i18n="fix.before">Before</span>
+          <span class="duel-rule"><canvas class="sign" data-sign="0" aria-hidden="true"></canvas><b data-i18n="rule.0">Priority to the right</b></span>
+        </header>
+        <div class="duel-view"><canvas id="duel-a" aria-label="The junction before the fix" data-i18n-attr="aria-label:fix.canvasA"></canvas></div>
+        <footer class="duel-score">
+          <div class="grade" id="da-grade" data-level="">–</div>
+          <dl class="figs">
+            <div><dt data-i18n="u.delay">mean delay</dt><dd><span id="da-delay">–</span> s</dd></div>
+            <div><dt data-i18n="u.through">through / min</dt><dd id="da-flow">–</dd></div>
+            <div><dt data-i18n="u.queued">queued</dt><dd id="da-queue">–</dd></div>
+          </dl>
+        </footer>
+      </article>
+      <div class="duel-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
+      <article class="duel-side glass after" aria-label="After" data-i18n-attr="aria-label:fix.after">
+        <header class="duel-head">
+          <span class="tag after" data-i18n="fix.after">After</span>
+          <span class="duel-rule"><canvas class="sign" id="db-sign" data-sign="4" aria-hidden="true"></canvas><b id="db-rule">Roundabout</b></span>
+        </header>
+        <div class="duel-view"><canvas id="duel-b" aria-label="The same junction after the fix" data-i18n-attr="aria-label:fix.canvasB"></canvas></div>
+        <footer class="duel-score">
+          <div class="grade" id="db-grade" data-level="">–</div>
+          <dl class="figs">
+            <div><dt data-i18n="u.delay">mean delay</dt><dd><span id="db-delay">–</span> s</dd></div>
+            <div><dt data-i18n="u.through">through / min</dt><dd id="db-flow">–</dd></div>
+            <div><dt data-i18n="u.queued">queued</dt><dd id="db-queue">–</dd></div>
+          </dl>
+        </footer>
+      </article>
+      <div class="duel-msg glass" id="duel-msg"><div class="spin" aria-hidden="true"></div><span id="duel-msg-text" data-i18n="fix.starting">Starting the engine…</span><div class="progress" aria-hidden="true"><i id="duel-progress"></i></div></div>
+    </div>
+
+    <div class="duel-controls glass">
+      <div class="ctl">
+        <span class="ctl-label" data-i18n="fix.yourfix">Your fix</span>
+        <div class="seg fixes" role="group" aria-label="Your fix" data-i18n-attr="aria-label:fix.yourfix">
+          <button type="button" data-fix="1" aria-pressed="false"><canvas class="sign" data-sign="1" aria-hidden="true"></canvas><span data-i18n="rule.1">Stop</span></button>
+          <button type="button" data-fix="2" aria-pressed="false"><canvas class="sign" data-sign="2" aria-hidden="true"></canvas><span data-i18n="rule.2">Give way</span></button>
+          <button type="button" data-fix="3" aria-pressed="false"><canvas class="sign" data-sign="3" aria-hidden="true"></canvas><span data-i18n="rule.3">Traffic lights</span></button>
+          <button type="button" data-fix="4" aria-pressed="true"><canvas class="sign" data-sign="4" aria-hidden="true"></canvas><span data-i18n="rule.4">Roundabout</span></button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label" data-i18n="fix.traffic">Traffic</span>
+        <div class="seg" role="group" aria-label="Traffic" data-i18n-attr="aria-label:fix.traffic">
+          <button type="button" data-dflow="4" aria-pressed="false" data-i18n="fix.calm">Calm</button>
+          <button type="button" data-dflow="6" aria-pressed="true" data-i18n="fix.busy">Busy</button>
+          <button type="button" data-dflow="8" aria-pressed="false" data-i18n="fix.rush">Rush hour</button>
+        </div>
+      </div>
+      <div class="ctl end">
+        <div class="seg" role="group" aria-label="Simulation speed" data-i18n-attr="aria-label:u.speed">
+          <button type="button" data-dspeed="1" aria-pressed="false">x1</button>
+          <button type="button" data-dspeed="2" aria-pressed="true">x2</button>
+          <button type="button" data-dspeed="4" aria-pressed="false">x4</button>
+        </div>
+        <button type="button" class="btn glass sm" id="fix-new"><svg aria-hidden="true"><use href="#i-dice"/></svg><span data-i18n="fix.new">New junction</span></button>
+      </div>
+    </div>
+    <p class="note" data-i18n="fix.note">Grades follow the levels of service of the Highway Capacity Manual, from the mean delay per vehicle: the grade the game gives.</p>
+  </section>
+
+  <!-- ============ the engine ============ -->
+  <section class="block" id="engine" aria-labelledby="t-engine">
+    <header class="head">
+      <div class="lane-mark" aria-hidden="true"></div>
+      <p class="eyebrow" data-i18n="eng.eyebrow">Proprietary traffic engine</p>
+      <h2 id="t-engine" data-i18n="eng.title">Not an animation. A simulation.</h2>
+      <p data-i18n="eng.lead">Every car on this page is computed by the Xsections engine, compiled to WebAssembly and running on your machine right now. No video, no recorded paths, no server. Here is what runs under the hood.</p>
+    </header>
+
+    <div class="bento">
+      <article class="card glass wide">
+        <p class="card-label mono" data-i18n="eng.a.label">Car-following</p>
+        <h3 data-i18n="eng.a.title">Drivers, not sprites</h3>
+        <p data-i18n="eng.a.text">Every vehicle runs the Intelligent Driver Model, the reference model of traffic research, with its own desired speed, safe time gap and comfortable braking. Queues, stop-and-go waves and gaps emerge on their own. Nobody scripts them.</p>
+        <div class="formula" role="img" aria-label="Intelligent Driver Model equations">
+          <div><var>a</var> = <var>a</var><sub>max</sub> · [ 1 − (<var>v</var> / <var>v</var><sub>0</sub>)<sup>δ</sup> − (<var>s</var>* / <var>s</var>)<sup>2</sup> ]</div>
+          <div><var>s</var>* = <var>s</var><sub>0</sub> + <var>v</var><var>T</var> + <var>v</var>·Δ<var>v</var> / (2√(<var>a</var><sub>max</sub><var>b</var>))</div>
+        </div>
+      </article>
+
+      <article class="card glass">
+        <p class="card-label mono" data-i18n="eng.b.label">Lane changing</p>
+        <h3 data-i18n="eng.b.title">Lane changes that negotiate</h3>
+        <p data-i18n="eng.b.text">MOBIL weighs every lane change: is it worth it for me, and how hard would the driver behind have to brake? A politeness factor settles the rest. Merges zip, one car at a time.</p>
+        <div class="formula" role="img" aria-label="MOBIL lane-change criterion">
+          <div><var>ã</var><sub>c</sub> − <var>a</var><sub>c</sub> + <var>p</var> (<var>ã</var><sub>n</sub> − <var>a</var><sub>n</sub> + <var>ã</var><sub>o</sub> − <var>a</var><sub>o</sub>) &gt; Δ<var>a</var><sub>th</sub></div>
+        </div>
+      </article>
+
+      <article class="card glass">
+        <p class="card-label mono" data-i18n="eng.c.label">Sight</p>
+        <h3 data-i18n="eng.c.title">Never faster than they can see</h3>
+        <p data-i18n="eng.c.text">A driver's speed is capped so they can always stop within the distance ahead of them: a bend, a crossing, a queue around the corner. No teleporting, no panic braking at the last second.</p>
+        <div class="formula big" role="img" aria-label="speed at most the square root of two times braking times distance"><div><var>v</var> ≤ √(2 · <var>b</var> · <var>L</var>)</div></div>
+      </article>
+
+      <article class="card glass">
+        <p class="card-label mono" data-i18n="eng.d.label">Geometry</p>
+        <h3 data-i18n="eng.d.title">A junction is geometry</h3>
+        <p data-i18n="eng.d.text">Lanes are real curves: lines, arcs, Bézier splines. The engine finds every point where two paths cross or merge, and each vehicle reserves the zones it needs before it commits. Nobody drives through anybody.</p>
+        <svg class="mini" viewBox="0 0 240 120" role="img" aria-label="Two lane paths crossing at a conflict point">
+          <path d="M8 96 C 80 96, 120 70, 232 20" class="p1"/>
+          <path d="M8 22 C 90 22, 140 60, 232 100" class="p2"/>
+          <path d="M8 60 H 232" class="p3"/>
+          <circle cx="117" cy="62" r="7" class="cp held"/>
+          <circle cx="66" cy="60" r="5" class="cp"/>
+          <circle cx="172" cy="60" r="5" class="cp"/>
+        </svg>
+      </article>
+
+      <article class="card glass">
+        <p class="card-label mono" data-i18n="eng.e.label">Right of way</p>
+        <h3 data-i18n="eng.e.title">The Highway Code, in code</h3>
+        <p data-i18n="eng.e.text">Priority to the right, stop signs, give way, priority roads, traffic lights, roundabouts where the ring goes first: French rules, French roundabouts. When four drivers arrive at once, one of them waves the others through.</p>
+        <div class="signs" aria-hidden="true"><canvas class="sign" data-sign="0"></canvas><canvas class="sign" data-sign="1"></canvas><canvas class="sign" data-sign="2"></canvas><canvas class="sign" data-sign="5"></canvas><canvas class="sign" data-sign="3"></canvas><canvas class="sign" data-sign="4"></canvas></div>
+      </article>
+
+      <article class="card glass wide">
+        <p class="card-label mono" data-i18n="eng.f.label">Scoring</p>
+        <h3 data-i18n="eng.f.title">Graded the way an engineer would</h3>
+        <p data-i18n="eng.f.text">Delay is the actual travel time minus the time the same trip takes on an empty road. The mean delay gives a level of service from A to F, with the thresholds traffic engineers use: stricter without lights than with them.</p>
+        <div class="los" role="table" aria-label="Level of service thresholds, mean delay in seconds" data-i18n-attr="aria-label:eng.f.table">
+          <div class="los-row head" role="row"><span role="columnheader" data-i18n="eng.f.grade">Grade</span><span role="columnheader" data-i18n="eng.f.unsig">No lights</span><span role="columnheader" data-i18n="eng.f.sig">With lights</span></div>
+          <div class="los-row" role="row" data-level="0"><b role="cell">A</b><span role="cell">≤ 10 s</span><span role="cell">≤ 10 s</span></div>
+          <div class="los-row" role="row" data-level="1"><b role="cell">B</b><span role="cell">≤ 15 s</span><span role="cell">≤ 20 s</span></div>
+          <div class="los-row" role="row" data-level="2"><b role="cell">C</b><span role="cell">≤ 25 s</span><span role="cell">≤ 35 s</span></div>
+          <div class="los-row" role="row" data-level="3"><b role="cell">D</b><span role="cell">≤ 35 s</span><span role="cell">≤ 55 s</span></div>
+          <div class="los-row" role="row" data-level="4"><b role="cell">E</b><span role="cell">≤ 50 s</span><span role="cell">≤ 80 s</span></div>
+          <div class="los-row" role="row" data-level="5"><b role="cell">F</b><span role="cell">&gt; 50 s</span><span role="cell">&gt; 80 s</span></div>
+        </div>
+      </article>
+
+      <article class="card glass">
+        <p class="card-label mono" data-i18n="eng.g.label">Determinism</p>
+        <h3 data-i18n="eng.g.title">Deterministic, to the bit</h3>
+        <p data-i18n="eng.g.text">A fixed step of 1/30 s and seeded random streams: the same inputs replay the same run, bit for bit. Fingerprint tests guard every change to the engine. A fix that works will always work.</p>
+      </article>
+
+      <article class="card glass">
+        <p class="card-label mono" data-i18n="eng.h.label">Architecture</p>
+        <h3 data-i18n="eng.h.title">One core, every screen</h3>
+        <p data-i18n="eng.h.text">The simulation is a pure C# library that knows nothing about graphics. The game draws it, this page draws it, and a headless runner plays thousands of simulated minutes to tune every level.</p>
+      </article>
+
+      <article class="card glass sheet">
+        <p class="card-label mono" data-i18n="eng.sheet">Datasheet</p>
+        <dl class="spec">
+          <div><dt data-i18n="spec.step">Time step</dt><dd data-i18n="spec.step.v">1/30 s, fixed</dd></div>
+          <div><dt data-i18n="spec.follow">Car-following</dt><dd data-i18n="spec.follow.v">Intelligent Driver Model, improved</dd></div>
+          <div><dt data-i18n="spec.lane">Lane changing</dt><dd data-i18n="spec.lane.v">MOBIL, zipper merging</dd></div>
+          <div><dt data-i18n="spec.conf">Conflicts</dt><dd data-i18n="spec.conf.v">Geometric conflict points, zone reservations</dd></div>
+          <div><dt data-i18n="spec.rules">Rules</dt><dd data-i18n="spec.rules.v">Priority to the right, stop, give way, priority road, signals, roundabouts</dd></div>
+          <div><dt data-i18n="spec.ped">Pedestrians</dt><dd data-i18n="spec.ped.v">Crosswalks with their own reservations</dd></div>
+          <div><dt data-i18n="spec.score">Scoring</dt><dd data-i18n="spec.score.v">Delay against free flow, level of service A to F</dd></div>
+          <div><dt data-i18n="spec.det">Determinism</dt><dd data-i18n="spec.det.v">Bit-exact, seeded</dd></div>
+          <div><dt data-i18n="spec.core">Core</dt><dd data-i18n="spec.core.v">C# / .NET, renderer-agnostic</dd></div>
+          <div><dt data-i18n="spec.web">On this page</dt><dd data-i18n="spec.web.v">WebAssembly, compiled ahead of time, runs locally</dd></div>
+        </dl>
+        <p class="wink" data-i18n="eng.wink">Probably the most over-engineered junction in your Steam library.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ test bench ============ -->
+  <section class="block" id="bench" aria-labelledby="t-bench">
+    <header class="head">
+      <div class="lane-mark" aria-hidden="true"></div>
+      <p class="eyebrow" data-i18n="lab.eyebrow">Engine test bench</p>
+      <h2 id="t-bench" data-i18n="lab.title">Break it yourself.</h2>
+      <p data-i18n="lab.lead">Roll a random junction, pick a rule, push the traffic. The engine decides every vehicle. Turn on Engine view to see the conflict points it reserves and why each car is waiting.</p>
+    </header>
+
+    <div class="lab" id="lab">
+      <div class="lab-view glass">
+        <canvas id="lab-canvas" aria-label="Simulation of the random junction" data-i18n-attr="aria-label:lab.canvas"></canvas>
+        <div class="lab-tag glass" aria-live="polite"><b><i aria-hidden="true"></i><span id="lab-rule-name">Priority to the right</span></b><span id="lab-desc">…</span></div>
+        <div class="lab-legend glass" id="lab-legend">
+          <span><i class="ring"></i><span data-i18n="lab.leg.cp">Conflict point</span></span>
+          <span><i class="held"></i><span data-i18n="lab.leg.held">Reserved by a vehicle</span></span>
+          <span data-i18n="lab.leg.dot">Dot on a vehicle: why it is waiting</span>
+        </div>
+        <div class="lab-msg" id="lab-msg"><div><div class="spin" aria-hidden="true"></div><span data-i18n="lab.starting">Starting the engine…</span></div></div>
+      </div>
+
+      <div class="lab-panel glass">
+        <div class="lab-group">
+          <div class="eyebrow row"><span data-i18n="lab.junction">Junction</span><output id="lab-seed">seed –</output></div>
+          <button type="button" class="btn primary sm" id="lab-new"><svg aria-hidden="true"><use href="#i-dice"/></svg><span data-i18n="lab.new">New junction</span></button>
+          <div class="lab-row">
+            <span class="muted" data-i18n="lab.arms">Arms</span>
+            <div class="seg" role="group" aria-label="Number of arms" data-i18n-attr="aria-label:lab.arms">
+              <button type="button" data-arms="3" aria-pressed="false">3</button>
+              <button type="button" data-arms="4" aria-pressed="true">4</button>
+              <button type="button" data-arms="5" aria-pressed="false">5</button>
+              <button type="button" data-arms="6" aria-pressed="false">6</button>
+            </div>
+          </div>
+          <div class="lab-row">
+            <span class="muted" data-i18n="lab.roads">Roads</span>
+            <div class="seg" role="group" aria-label="Road shape" data-i18n-attr="aria-label:lab.roads">
+              <button type="button" data-bend="0" aria-pressed="false" data-i18n="lab.straight">Straight</button>
+              <button type="button" data-bend="25" aria-pressed="true" data-i18n="lab.curved">Curved</button>
+            </div>
+          </div>
+          <div class="lab-row">
+            <span class="muted" data-i18n="lab.oneway">One-way roads</span>
+            <div class="seg" role="group" aria-label="One-way roads" data-i18n-attr="aria-label:lab.oneway">
+              <button type="button" data-oneway="0" aria-pressed="true" data-i18n="lab.no">No</button>
+              <button type="button" data-oneway="0.25" aria-pressed="false" data-i18n="lab.yes">Yes</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lab-group">
+          <div class="eyebrow" data-i18n="lab.rule">Junction rule</div>
+          <div class="rules-pick" role="group" aria-label="Junction rule" data-i18n-attr="aria-label:lab.rule">
+            <button type="button" data-rule="0" aria-pressed="true"><canvas class="sign" data-sign="0" aria-hidden="true"></canvas><b data-i18n="rule.0">Priority to the right</b><small data-i18n="rule.0.d">No signs: everyone yields to whoever comes from their right.</small></button>
+            <button type="button" data-rule="1" aria-pressed="false"><canvas class="sign" data-sign="1" aria-hidden="true"></canvas><b data-i18n="rule.1">Stop</b><small data-i18n="rule.1.d">A full stop on the side roads; the main road goes first.</small></button>
+            <button type="button" data-rule="2" aria-pressed="false"><canvas class="sign" data-sign="2" aria-hidden="true"></canvas><b data-i18n="rule.2">Give way</b><small data-i18n="rule.2.d">The side roads yield, without stopping when the way is clear.</small></button>
+            <button type="button" data-rule="3" aria-pressed="false"><canvas class="sign" data-sign="3" aria-hidden="true"></canvas><b data-i18n="rule.3">Traffic lights</b><small data-i18n="rule.3.d">A signal plan the engine derives from the shape of the junction.</small></button>
+            <button type="button" data-rule="4" aria-pressed="false"><canvas class="sign" data-sign="4" aria-hidden="true"></canvas><b data-i18n="rule.4">Roundabout</b><small data-i18n="rule.4.d">It replaces the junction: the ring has priority, the arms yield.</small></button>
+          </div>
+        </div>
+
+        <div class="lab-group">
+          <div class="eyebrow row"><span data-i18n="lab.traffic">Traffic</span><output id="lab-flow-out">6 veh/min per entry</output></div>
+          <input type="range" id="lab-flow" min="2" max="16" step="1" value="6" aria-label="Vehicles per minute at each entry" data-i18n-attr="aria-label:lab.flowaria">
+          <div class="lab-row">
+            <div class="seg" role="group" aria-label="Simulation speed" data-i18n-attr="aria-label:u.speed">
+              <button type="button" data-lspeed="0" aria-pressed="false" aria-label="Pause" data-i18n-attr="aria-label:u.pause"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+              <button type="button" data-lspeed="1" aria-pressed="true">x1</button>
+              <button type="button" data-lspeed="2" aria-pressed="false">x2</button>
+              <button type="button" data-lspeed="4" aria-pressed="false">x4</button>
+              <button type="button" data-lspeed="8" aria-pressed="false">x8</button>
+            </div>
+            <button type="button" class="scope-btn" id="lab-scope" aria-pressed="false"><svg aria-hidden="true"><use href="#i-scope"/></svg><span data-i18n="lab.scope">Engine view</span></button>
+          </div>
+        </div>
+
+        <div class="lab-group">
+          <div class="eyebrow row"><span data-i18n="lab.live">Live</span><output id="lab-clock">0:00</output></div>
+          <div class="lab-stats">
+            <div class="g"><strong class="grade" id="ls-grade" data-level="">–</strong><span data-i18n="ls.grade">grade, from the mean delay</span></div>
+            <div><strong id="ls-delay">–</strong><span data-i18n="ls.delay">s mean delay per vehicle</span></div>
+            <div><strong id="ls-flow">0</strong><span data-i18n="ls.flow">vehicles through, last minute</span></div>
+            <div><strong id="ls-wait">0</strong><span data-i18n="ls.wait">stopped right now</span></div>
+            <div><strong id="ls-hes">0</strong><span data-i18n="ls.hes">hesitations (priority deadlocks)</span></div>
+            <div class="zero"><strong id="ls-grid">0</strong><span data-i18n="ls.grid">gridlocks, should stay at 0</span></div>
+            <div><strong id="ls-cp">0</strong><span data-i18n="ls.cp">conflict points computed</span></div>
+          </div>
+          <div class="waitbar" id="lab-waitbar" aria-hidden="true"></div>
+          <div class="waitkeys" id="lab-waitkeys"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lab-compare glass">
+      <header>
+        <div>
+          <h3 data-i18n="cmp.title">Same junction, same cars, five rules</h3>
+          <p data-i18n="cmp.lead">The engine replays five minutes of traffic on this junction under each rule, with identical arrivals: only the rule changes. The same method tunes the game's levels, at a smaller scale.</p>
+        </div>
+        <button type="button" class="btn primary" id="lab-go"><svg aria-hidden="true"><use href="#i-play"/></svg><span id="lab-go-label" data-i18n="cmp.go">Compare the rules</span></button>
+      </header>
+      <div class="progress" id="lab-progress" hidden><i></i></div>
+      <div class="cmp" id="lab-cmp" hidden></div>
+      <p class="note" data-i18n="lab.foot">This browser bench runs roads with one lane each way. Multi-lane junctions, zipper merges and two-lane roundabouts run in the game.</p>
+    </div>
+  </section>
+
+  <!-- ============ the game ============ -->
+  <section class="block" id="game" aria-labelledby="t-game">
+    <header class="head">
+      <div class="lane-mark" aria-hidden="true"></div>
+      <p class="eyebrow" data-i18n="game.eyebrow">The game</p>
+      <h2 id="t-game" data-i18n="game.title">Fix the junctions of everyday life.</h2>
+      <p data-i18n="game.lead">The supermarket junction everybody hates. The five-way star nobody understands. The village street at rush hour. Redesign them, hit play, and watch them breathe again.</p>
+    </header>
+
+    <div class="features">
+      <article class="feature glass"><svg aria-hidden="true"><use href="#i-chart"/></svg><h3 data-i18n="f1.t">A real traffic simulation</h3><p data-i18n="f1.p">Throughput, delay, queues, live graphs and an A to F grade for every junction, readable at a glance.</p></article>
+      <article class="feature glass"><svg aria-hidden="true"><use href="#i-pencil"/></svg><h3 data-i18n="f2.t">Prefab or handmade</h3><p data-i18n="f2.p">Drop a prefab junction in one click, or draw every lane by hand and decorate. Both drive exactly the same.</p></article>
+      <article class="feature glass"><svg aria-hidden="true"><use href="#i-heart"/></svg><h3 data-i18n="f3.t">Never a game over</h3><p data-i18n="f3.p">No stressful timer, no red screen. Grades, hints, and all the time you need. You decide when it is good enough.</p></article>
+      <article class="feature glass"><svg aria-hidden="true"><use href="#i-light"/></svg><h3 data-i18n="f4.t">Lights, stops, roundabouts</h3><p data-i18n="f4.p">Traffic lights with editable plans, stop and give-way signs, priority to the right, French-style roundabouts with one or two lanes.</p></article>
+      <article class="feature glass"><svg aria-hidden="true"><use href="#i-moon"/></svg><h3 data-i18n="f5.t">Day, night and people</h3><p data-i18n="f5.p">Headlights come on at dusk, pedestrians cross, and an original soundtrack keeps you company through long light-timing sessions.</p></article>
+      <article class="feature glass"><svg aria-hidden="true"><use href="#i-flag"/></svg><h3 data-i18n="f6.t">Challenges and sandbox</h3><p data-i18n="f6.p">A series of levels from a single junction to whole networks, and a sandbox where traffic and budget are all yours.</p></article>
+    </div>
+
+    <div class="gallery-head">
+      <h3 data-i18n="gal.title">From the development build</h3>
+      <p class="muted" data-i18n="gal.note">Real captures from the in-development build. Visuals are work in progress and will keep evolving.</p>
+    </div>
+    <div class="gallery" id="gallery">
+      <button type="button" class="shot glass tall" data-shot="02-giratoire-2-voies-nuit"><img src="img/shots/02-giratoire-2-voies-nuit-sm.webp" width="800" height="450" loading="lazy" alt="Two-lane roundabout at night, headlights on" data-i18n-attr="alt:shot.02"></button>
+      <button type="button" class="shot glass" data-shot="05-x-60-stops-nuit"><img src="img/shots/05-x-60-stops-nuit-sm.webp" width="800" height="450" loading="lazy" alt="Skewed crossroads with stop signs, at night" data-i18n-attr="alt:shot.05"></button>
+      <button type="button" class="shot glass" data-shot="03-etoile-giratoire-jour"><img src="img/shots/03-etoile-giratoire-jour-sm.webp" width="800" height="450" loading="lazy" alt="Five-arm star with a roundabout, by day" data-i18n-attr="alt:shot.03"></button>
+      <button type="button" class="shot glass" data-shot="01-croix-2-voies-feux-jour"><img src="img/shots/01-croix-2-voies-feux-jour-sm.webp" width="800" height="450" loading="lazy" alt="Crossroads with two lanes each way and traffic lights, by day" data-i18n-attr="alt:shot.01"></button>
+      <button type="button" class="shot glass" data-shot="04-t-poches-feux-jour"><img src="img/shots/04-t-poches-feux-jour-sm.webp" width="800" height="450" loading="lazy" alt="T-junction with left-turn lanes and traffic lights" data-i18n-attr="alt:shot.04"></button>
+      <button type="button" class="shot glass" data-shot="06-passage-pieton-jour"><img src="img/shots/06-passage-pieton-jour-sm.webp" width="800" height="450" loading="lazy" alt="Pedestrian crossing, by day" data-i18n-attr="alt:shot.06"></button>
+    </div>
+  </section>
+
+  <!-- ============ community ============ -->
+  <section class="block" id="community" aria-labelledby="t-community">
+    <header class="head">
+      <div class="lane-mark" aria-hidden="true"></div>
+      <p class="eyebrow" data-i18n="com.eyebrow">Community</p>
+      <h2 id="t-community" data-i18n="com.title">Come watch the traffic.</h2>
+      <p data-i18n="com.lead">Devlogs, before and after clips, and the worst junctions you send in. Follow the build wherever you scroll.</p>
+    </header>
+
+    <div class="socials">
+      <a class="social discord glass" href="https://discord.gg/GJtPFErEtj" target="_blank" rel="noopener">
+        <svg class="b" aria-hidden="true"><use href="#b-discord"/></svg>
+        <span class="s-name">Discord</span>
+        <span class="s-title" data-i18n="com.dc.t">Join the Discord</span>
+        <span class="s-text" data-i18n="com.dc.p">Post the worst junction in your town, follow the devlog, and get first in line for playtests.</span>
+        <span class="s-go"><span data-i18n="com.dc.go">Join the server</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="social youtube glass" href="https://www.youtube.com/@xsections" target="_blank" rel="noopener">
+        <svg class="b" aria-hidden="true"><use href="#b-youtube"/></svg>
+        <span class="s-name">YouTube</span><span class="s-handle mono">@xsections</span>
+        <span class="s-text" data-i18n="com.yt">Devlogs and deep dives into the engine</span>
+        <svg class="out" aria-hidden="true"><use href="#i-out"/></svg>
+      </a>
+      <a class="social tiktok glass" href="https://www.tiktok.com/@xsections" target="_blank" rel="noopener">
+        <svg class="b" aria-hidden="true"><use href="#b-tiktok"/></svg>
+        <span class="s-name">TikTok</span><span class="s-handle mono">@xsections</span>
+        <span class="s-text" data-i18n="com.tt">Before and after, in fifteen seconds</span>
+        <svg class="out" aria-hidden="true"><use href="#i-out"/></svg>
+      </a>
+      <a class="social instagram glass" href="https://www.instagram.com/xsectionsgame/" target="_blank" rel="noopener">
+        <svg class="b" aria-hidden="true"><use href="#b-instagram"/></svg>
+        <span class="s-name">Instagram</span><span class="s-handle mono">@xsectionsgame</span>
+        <span class="s-text" data-i18n="com.ig">Night shots and behind the scenes</span>
+        <svg class="out" aria-hidden="true"><use href="#i-out"/></svg>
+      </a>
+      <a class="social x glass" href="https://x.com/xsectionsgame" target="_blank" rel="noopener">
+        <svg class="b" aria-hidden="true"><use href="#b-x"/></svg>
+        <span class="s-name">X</span><span class="s-handle mono">@xsectionsgame</span>
+        <span class="s-text" data-i18n="com.x">Dev notes, GIFs and road-nerd talk</span>
+        <svg class="out" aria-hidden="true"><use href="#i-out"/></svg>
+      </a>
+    </div>
+
+    <div class="wish glass">
+      <img src="img/brand/x-night-256.png" width="96" height="96" alt="">
+      <p data-steam data-i18n="com.wish">The single best way to help an indie game: put it on your wishlist.</p>
+      <p data-nosteam data-i18n="com.wishSoon">The Steam page is on its way. The Discord hears about it first.</p>
+      <a class="btn primary" data-steam href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#b-steam"/></svg><span data-i18n="cta.wishlist">Wishlist on Steam</span></a>
+      <a class="btn primary" data-nosteam href="https://discord.gg/GJtPFErEtj" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#b-discord"/></svg><span data-i18n="cta.discord">Join the Discord</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <img src="img/brand/ivoria-lightfull.png" width="117" height="160" alt="Ivoria Int.">
+      <div>
+        <p data-i18n="foot.by">Xsections is developed by Ivoria Int.</p>
+        <p class="muted" data-i18n="foot.dev">In development. Visuals are work in progress.</p>
+      </div>
+    </div>
+    <nav class="foot-links" aria-label="Social links" data-i18n-attr="aria-label:foot.social">
+      <a href="https://discord.gg/GJtPFErEtj" target="_blank" rel="noopener" aria-label="Discord"><svg aria-hidden="true"><use href="#b-discord"/></svg></a>
+      <a href="https://www.youtube.com/@xsections" target="_blank" rel="noopener" aria-label="YouTube"><svg aria-hidden="true"><use href="#b-youtube"/></svg></a>
+      <a href="https://www.tiktok.com/@xsections" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#b-tiktok"/></svg></a>
+      <a href="https://www.instagram.com/xsectionsgame/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#b-instagram"/></svg></a>
+      <a href="https://x.com/xsectionsgame" target="_blank" rel="noopener" aria-label="X"><svg aria-hidden="true"><use href="#b-x"/></svg></a>
+    </nav>
+    <div class="foot-legal">
+      <p data-i18n="foot.privacy">No cookies, no trackers. The engine runs on your machine.</p>
+      <p><span data-i18n="foot.copy">© 2026 Ivoria Int. All rights reserved.</span> <a href="legal.html" data-i18n="foot.legal">Legal notice</a></p>
+    </div>
+  </div>
+</footer>
+
+<dialog class="viewer" id="viewer" aria-label="Screenshot" data-i18n-attr="aria-label:gal.viewer">
+  <figure>
+    <img id="viewer-img" src="data:," alt="">
+    <figcaption id="viewer-cap"></figcaption>
+  </figure>
+  <button type="button" class="v-btn v-close" id="viewer-close" aria-label="Close" data-i18n-attr="aria-label:u.close"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  <button type="button" class="v-btn v-prev" id="viewer-prev" aria-label="Previous" data-i18n-attr="aria-label:u.prev"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+  <button type="button" class="v-btn v-next" id="viewer-next" aria-label="Next" data-i18n-attr="aria-label:u.next"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+</dialog>
+
+</body>
+</html>
