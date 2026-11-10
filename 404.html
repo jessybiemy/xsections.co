@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#080d22">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Xsections™">
+<meta property="og:site_name" content="Xsections">
 <meta property="og:title" content="Wrong exit · Xsections™">
 <meta property="og:description" content="Xsections™ is a cozy video game about road engineering: redesign junctions, watch real traffic flow, in a tiny world. See you at the junction, very soon.">
 <meta property="og:url" content="https://xsections.co/">
@@ -33,19 +33,25 @@
 .tm { font-size: max(.3em, 12px); line-height: 1; vertical-align: top; position: relative; top: .32em; margin-left: .04em; letter-spacing: 0; font-weight: 500; }
 
 /* Layout: one screen. Words and the call box on the left, the official X at full height on the
-   right: the X is the junction the headline talks about. Night only (the social DA), flat fields,
-   no lines, no shadows, no gradients. Round shapes, like the arms of the X. */
+   right: the X is the junction the headline talks about. Flat fields, no lines, no shadows, no
+   gradients. Round shapes, like the arms of the X.
+   Two looks, one layout: night (the default, the teaser as launched) and day
+   (<html data-da="day">, the trial of 10 Nov). Every value comes from the brand bible. */
 :root {
   color-scheme: dark;
   --ground: #080d22;      /* night of the brand */
   --ground-2: #121a3b;    /* one tone step: the call box */
   --ground-3: #222c55;    /* resting ring of the push button */
-  --ink: #eef1f8;
-  --ink-2: #b7bfd8;       /* secondary notes only */
+  --ink: #e9edf8;         /* the white of the game's interface (bible, 10 Nov) */
+  --ink-2: #9aa4c2;       /* secondary notes only: the grey of the game's interface */
   --signal: #ffb21e;      /* French traffic-signal amber: the action and the lamp */
   --signal-hi: #ffc552;
   --signal-off: #3a3324;  /* the same lens, unlit */
   --on-signal: #0b1130;
+  --push: #e9edf8;        /* the push button: a light disc at night */
+  --push-hi: #ffffff;
+  --on-push: #0b1130;
+  --hover: #ffc552;       /* a text link under the pointer */
   --f-head: 'Lexend', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --f-body: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --t-lead: clamp(19px, 1.55vw, 23px);
@@ -53,6 +59,19 @@
   --t-small: 15px;
   --gut: clamp(16px, 3.4vw, 48px);
   --ease: cubic-bezier(.16, 1, .3, 1);
+}
+:root[data-da="day"] {
+  color-scheme: light;
+  --ground: #edf2e8;      /* the day ground of the brand */
+  --ground-2: #fdfbf6;    /* the call box: the white of the day logotype's ground */
+  --ground-3: #edf2e8;    /* resting ring of the push button: the page ground again */
+  --ink: #1b2232;
+  --ink-2: #586176;
+  --signal-off: #e6dfcd;  /* the unlit lens, by day */
+  --push: #1b2232;        /* the push button: an ink disc by day */
+  --push-hi: #2b3550;
+  --on-push: #fdfbf6;
+  --hover: #2c6bcc;       /* the day link blue */
 }
 * { box-sizing: border-box; }
 html { background: var(--ground); -webkit-text-size-adjust: 100%; }
@@ -70,7 +89,7 @@ a { color: inherit; }
 .lockup img { width: calc(var(--w) * 1.16); height: calc(var(--w) * 1.16); flex: none; }
 .lockup > span { font: 500 var(--w)/.9 var(--f-head); letter-spacing: -.05em; margin-left: .06em; padding-bottom: .08em; white-space: nowrap; }
 .lang { font: 500 var(--t-body)/1 var(--f-body); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; padding: 10px 2px; }
-.lang:hover { color: var(--signal-hi); }
+.lang:hover { color: var(--hover); }
 
 .hero {
   display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center;
@@ -95,11 +114,11 @@ h1 {
 .status span { display: block; color: var(--ink-2); font-size: var(--t-small); }
 .push {
   width: 84px; height: 84px; border-radius: 50%; cursor: pointer; padding: 0;
-  border: 7px solid var(--ground-3); background: var(--ink) padding-box; /* the border is the lit ring */
-  color: var(--on-signal); font: 650 14px/1 var(--f-body); display: grid; place-items: center;
+  border: 7px solid var(--ground-3); background: var(--push) padding-box; /* the border is the lit ring */
+  color: var(--on-push); font: 650 14px/1 var(--f-body); display: grid; place-items: center;
   transition: transform .18s var(--ease), background-color .2s ease, border-color .25s ease;
 }
-.push:hover { background-color: #ffffff; }
+.push:hover { background-color: var(--push-hi); }
 .push:active { transform: scale(.93); }
 .push:focus-visible { outline-offset: 4px; border-radius: 50%; }
 .callbox[data-state="done"] .push, .callbox[data-state="back"] .push { border-color: var(--signal); }
@@ -116,7 +135,7 @@ h1 {
 .btn:active { transform: scale(.97); }
 .follow { margin: 0; color: var(--ink-2); font-size: var(--t-small); max-width: 30ch; text-wrap: balance; }
 .follow a { color: var(--ink); text-underline-offset: 4px; }
-.follow a:hover { color: var(--signal-hi); }
+.follow a:hover { color: var(--hover); }
 
 .mark { margin: 0; justify-self: end; width: 100%; max-width: min(100%, 70svh, 700px); }
 .mark img { display: block; width: 100%; height: auto; }
